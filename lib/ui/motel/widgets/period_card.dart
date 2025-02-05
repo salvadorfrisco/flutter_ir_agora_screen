@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../../domain/models/periodo.dart';
+import '../../core/widgets/lowercase_text.dart';
+import '../../core/widgets/discount_badge.dart';
 
 class PeriodCard extends StatelessWidget {
   final Periodo periodo;
@@ -27,15 +29,38 @@ class PeriodCard extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    periodo.tempoFormatado,
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      LowercaseText(
+                        periodo.tempoFormatado,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                      if (periodo.desconto != null) ...[
+                        const SizedBox(width: 8),
+                        DiscountBadge(
+                          originalValue: periodo.valor,
+                          discountValue: periodo.desconto!.desconto,
+                        ),
+                      ],
+                    ],
                   ),
-                  Text(
-                    currencyFormat.format(periodo.valorTotal),
-                    style: Theme.of(context).textTheme.titleMedium,
-                    overflow: TextOverflow.ellipsis,
+                  Row(
+                    children: [
+                      if (periodo.desconto != null)
+                        Text(
+                          currencyFormat.format(periodo.valor),
+                          style: TextStyle(
+                            color: Colors.grey[500],
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 16,
+                          ),
+                        ),
+                      if (periodo.desconto != null) const SizedBox(width: 8),
+                      Text(
+                        currencyFormat.format(periodo.valorTotal),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ],
                   ),
                 ],
               ),
