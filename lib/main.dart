@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'data/repositories/motel_repository.dart';
 import 'ui/core/widgets/lowercase_text.dart';
 import 'ui/motel/view_model/motel_view_model.dart';
-import 'ui/motel/widgets/header_motel.dart';
+import 'ui/motel/widgets/header_guia.dart';
 import 'ui/motel/widgets/suite_carousel.dart';
 
 void main() {
@@ -79,7 +79,7 @@ class _MotelScreenState extends State<MotelScreen> {
 
           return Column(
             children: const [
-              HeaderMotel(),
+              HeaderGuia(),
               Expanded(child: SuiteCarousel()),
             ],
           );

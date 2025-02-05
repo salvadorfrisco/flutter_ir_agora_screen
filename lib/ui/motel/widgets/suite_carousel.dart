@@ -13,16 +13,20 @@ class SuiteCarousel extends StatelessWidget {
         final motel = viewModel.motel;
         if (motel == null) return const SizedBox();
 
-        return SizedBox(
-          child: PageView.builder(
-            controller: PageController(viewportFraction: 0.96),
-            itemCount: motel.suites.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: SuiteCard(suite: motel.suites[index]),
-              );
-            },
+        return SingleChildScrollView(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height *
+                0.75, // 75% da altura da tela
+            child: PageView.builder(
+              controller: PageController(viewportFraction: 0.9),
+              itemCount: motel.suites.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                  child: SuiteCard(suite: motel.suites[index]),
+                );
+              },
+            ),
           ),
         );
       },

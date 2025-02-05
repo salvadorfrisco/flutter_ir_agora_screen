@@ -11,8 +11,8 @@ class SuiteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 2.0),
       children: [
         SuitePhoto(
           photo: suite.fotos[0],
@@ -20,10 +20,7 @@ class SuiteCard extends StatelessWidget {
         ),
         ItensCategoryCard(itens: suite.categoriaItens),
         ...suite.periodos.map(
-          (periodo) => Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: PeriodCard(periodo: periodo),
-          ),
+          (periodo) => PeriodCard(periodo: periodo),
         ),
       ],
     );
