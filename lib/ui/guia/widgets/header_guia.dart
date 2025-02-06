@@ -4,8 +4,8 @@ import '../view_model/motel_view_model.dart';
 import '../../core/widgets/lowercase_text.dart';
 import '../../core/widgets/rating_badge.dart';
 
-class HeaderGuia extends StatelessWidget {
-  const HeaderGuia({super.key});
+class Header extends StatelessWidget {
+  const Header({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -89,7 +89,7 @@ class _MotelScreenState extends State<MotelScreen> {
 
             return Column(
               children: const [
-                HeaderGuia(),
+                Header(),
                 Expanded(child: SuiteCarousel()),
               ],
             );

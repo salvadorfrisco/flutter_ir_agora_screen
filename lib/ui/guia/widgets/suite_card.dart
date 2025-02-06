@@ -17,6 +17,7 @@ class SuiteCard extends StatelessWidget {
         SuitePhoto(
           photo: suite.fotos[0],
           name: suite.nome,
+          photos: suite.fotos,
           qtd: suite.qtd,
           exibirQtdDisponiveis: suite.exibirQtdDisponiveis,
         ),
