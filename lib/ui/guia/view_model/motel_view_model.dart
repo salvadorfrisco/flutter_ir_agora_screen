@@ -1,9 +1,11 @@
 import 'package:flutter/foundation.dart';
+import 'package:dartz/dartz.dart';
+import '../../../data/repositories/motel_repository_impl.dart';
+import '../../../domain/errors/failures.dart';
 import '../../../domain/models/motel.dart';
-import '../../../data/repositories/motel_repository.dart';
 
 class MotelViewModel extends ChangeNotifier {
-  final MotelRepository _repository;
+  final MotelRepositoryImpl _repository;
   Motel? motel;
   bool isLoading = false;
   String? error;
@@ -16,7 +18,14 @@ class MotelViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      motel = await _repository.getMotel();
+      final Either<Failure, Motel> result = await _repository.getMotel();
+
+      result.fold(
+        (failure) =>
+            error = failure.toString(), // Em caso de erro, armazena a mensagem
+        (motelData) =>
+            motel = motelData, // Em caso de sucesso, armazena o motel
+      );
     } catch (e) {
       error = e.toString();
     } finally {
