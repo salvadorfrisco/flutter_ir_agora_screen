@@ -77,7 +77,7 @@ class SuitePhotosPage extends StatelessWidget {
 
   Widget _buildSingleImage(String imageUrl, double height) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 6.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: SizedBox(
         height: height,
         child: Image.network(
@@ -91,12 +91,12 @@ class SuitePhotosPage extends StatelessWidget {
 
   Widget _buildDoubleImage(String imageUrl1, String imageUrl2, double height) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(right: 6.0),
+              padding: const EdgeInsets.only(right: 4.0),
               child: SizedBox(
                 height: height,
                 child: Image.network(
@@ -109,7 +109,7 @@ class SuitePhotosPage extends StatelessWidget {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 2.0),
+              padding: const EdgeInsets.only(left: 4.0),
               child: SizedBox(
                 height: height,
                 child: Image.network(
