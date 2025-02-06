@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'data/repositories/motel_repository.dart';
 import 'ui/core/widgets/lowercase_text.dart';
-import 'ui/motel/view_model/motel_view_model.dart';
-import 'ui/motel/widgets/header_guia.dart';
-import 'ui/motel/widgets/suite_carousel.dart';
+import 'ui/guia/view_model/motel_view_model.dart';
+import 'ui/guia/widgets/header_guia.dart';
+import 'ui/guia/widgets/suite_carousel.dart';
 
 void main() {
   runApp(

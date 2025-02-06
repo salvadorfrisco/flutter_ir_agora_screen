@@ -6,12 +6,16 @@ class Suite {
   final List<String> fotos;
   final List<CategoriaItem> categoriaItens;
   final List<Periodo> periodos;
+  final int? qtd;
+  final bool exibirQtdDisponiveis;
 
   Suite({
     required this.nome,
     required this.fotos,
     required this.categoriaItens,
     required this.periodos,
+    this.qtd,
+    this.exibirQtdDisponiveis = false,
   });
 
   factory Suite.fromJson(Map<String, dynamic> json) {
@@ -24,6 +28,8 @@ class Suite {
       periodos: (json['periodos'] as List)
           .map((periodo) => Periodo.fromJson(periodo))
           .toList(),
+      qtd: json['qtd'],
+      exibirQtdDisponiveis: json['exibirQtdDisponiveis'] ?? false,
     );
   }
 }

@@ -17,6 +17,8 @@ class SuiteCard extends StatelessWidget {
         SuitePhoto(
           photo: suite.fotos[0],
           name: suite.nome,
+          qtd: suite.qtd,
+          exibirQtdDisponiveis: suite.exibirQtdDisponiveis,
         ),
         ItensCategoryCard(itens: suite.categoriaItens),
         ...suite.periodos.map(
