@@ -5,6 +5,7 @@ import 'ui/core/widgets/lowercase_text.dart';
 import 'ui/guia/view_model/motel_view_model.dart';
 import 'ui/guia/widgets/header_guia.dart';
 import 'ui/guia/widgets/suite_carousel.dart';
+import 'ui/core/widgets/custom_app_bar.dart';
 
 void main() {
   runApp(
@@ -64,26 +65,36 @@ class _MotelScreenState extends State<MotelScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: LowercaseText('ir agora')),
-      body: Consumer<MotelViewModel>(
-        builder: (context, viewModel, child) {
-          if (viewModel.isLoading) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      backgroundColor: Colors.red,
+      appBar: const CustomAppBar(),
+      body: Container(
+        decoration: const BoxDecoration(
+          color: Color(0xFFF5F5F5),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        child: Consumer<MotelViewModel>(
+          builder: (context, viewModel, child) {
+            if (viewModel.isLoading) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-          if (viewModel.error != null) {
-            return Center(
-                child:
-                    Text(viewModel.error?.toString() ?? 'Erro desconhecido'));
-          }
+            if (viewModel.error != null) {
+              return Center(
+                  child:
+                      Text(viewModel.error?.toString() ?? 'Erro desconhecido'));
+            }
 
-          return Column(
-            children: const [
-              HeaderGuia(),
-              Expanded(child: SuiteCarousel()),
-            ],
-          );
-        },
+            return Column(
+              children: const [
+                HeaderGuia(),
+                Expanded(child: SuiteCarousel()),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

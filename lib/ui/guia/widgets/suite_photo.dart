@@ -60,7 +60,7 @@ class SuitePhoto extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.campaign,
+                          Icons.wb_twilight,
                           color: Colors.red[600],
                           size: 16,
                         ),
