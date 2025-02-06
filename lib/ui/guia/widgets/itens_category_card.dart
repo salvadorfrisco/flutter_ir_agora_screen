@@ -11,8 +11,8 @@ class ItensCategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.95,
-        margin: const EdgeInsets.symmetric(vertical: 2.0),
+        width: MediaQuery.of(context).size.width * 0.9,
+        margin: const EdgeInsets.symmetric(vertical: 4.0),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8),
@@ -35,7 +35,7 @@ class ItensCategoryCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(4.0),
       decoration: BoxDecoration(
-        color: Colors.grey[50],
+        color: Colors.grey[100],
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Image.network(

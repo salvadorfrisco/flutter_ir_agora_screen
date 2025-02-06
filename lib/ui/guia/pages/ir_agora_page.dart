@@ -46,11 +46,13 @@ class _IrAgoraPageState extends State<IrAgoraPage> {
                       Text(viewModel.error?.toString() ?? 'Erro desconhecido'));
             }
 
-            return Column(
-              children: const [
-                Header(),
-                Expanded(child: SuiteCarousel()),
-              ],
+            return SizedBox.expand(
+              child: Column(
+                children: const [
+                  Header(),
+                  Expanded(child: SuiteCarousel()),
+                ],
+              ),
             );
           },
         ),
