@@ -1,22 +1,24 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ir_agora_screen/ui/guia/pages/suite_photos_page.dart';
 
-// Função para mockar carregamento de imagens
-void mockNetworkImages() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  // Intercepta chamadas da NetworkImage e retorna um placeholder
-  FlutterError.onError = (FlutterErrorDetails details) {
-    if (details.exception.toString().contains('NetworkImageLoadException')) {
-      debugPrint('Interceptando erro de imagem de rede para testes.');
-    } else {
-      FlutterError.presentError(details);
-    }
-  };
+class TestHttpOverrides extends HttpOverrides {
+  @override
+  HttpClient createHttpClient(SecurityContext? context) {
+    return super.createHttpClient(context)
+      ..badCertificateCallback =
+          (X509Certificate cert, String host, int port) => true;
+  }
 }
 
 void main() {
+  setUpAll(() {
+    HttpOverrides.global = TestHttpOverrides();
+    TestWidgetsFlutterBinding.ensureInitialized();
+  });
+
   final List<String> mockPhotos = [
     'https://via.placeholder.com/150',
     'https://via.placeholder.com/151',
@@ -24,26 +26,25 @@ void main() {
     'https://via.placeholder.com/153',
   ];
 
-  const String mockSuiteName = 'Suite Test';
-
   Widget createTestWidget() {
     return MaterialApp(
       home: SuitePhotosPage(
         photos: mockPhotos,
-        suiteName: mockSuiteName,
+        suiteName: 'Suite Test',
       ),
     );
   }
 
   testWidgets('deve exibir a primeira foto em tamanho grande', (tester) async {
-    mockNetworkImages(); // Intercepta carregamento de imagens
-
     await tester.pumpWidget(createTestWidget());
+    await tester.pumpAndSettle();
 
     final firstImageFinder = find.byType(Image);
     expect(firstImageFinder, findsWidgets);
 
     final Image firstImage = tester.widget(firstImageFinder.first);
+
+    // Verifica se a primeira foto é exibida
     expect(
       (firstImage.image as NetworkImage).url,
       equals(mockPhotos[0]),

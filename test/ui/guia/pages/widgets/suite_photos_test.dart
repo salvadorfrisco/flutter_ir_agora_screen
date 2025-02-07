@@ -54,6 +54,7 @@ void main() {
     await tester.tap(find.byType(GestureDetector));
     await tester.pumpAndSettle();
 
+    // Verifica se a página de fotos da suíte é exibida
     expect(find.byType(SuitePhotosPage), findsOneWidget);
   });
 
@@ -67,6 +68,7 @@ void main() {
       exibirQtdDisponiveis: true,
     ));
 
+    // Verifica se o texto "só mais 3 pelo app" é exibido
     expect(find.text('só mais 3 pelo app'), findsOneWidget);
   });
 }
