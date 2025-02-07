@@ -21,10 +21,8 @@ class MotelViewModel extends ChangeNotifier {
       final Either<Failure, Motel> result = await _repository.getMotel();
 
       result.fold(
-        (failure) =>
-            error = failure.toString(), // Em caso de erro, armazena a mensagem
-        (motelData) =>
-            motel = motelData, // Em caso de sucesso, armazena o motel
+        (failure) => error = failure.toString(),
+        (motelData) => motel = motelData,
       );
     } catch (e) {
       error = e.toString();

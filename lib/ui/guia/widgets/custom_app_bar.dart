@@ -19,11 +19,10 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return Container(
       color: Colors.red,
       child: SafeArea(
-        bottom: false, // Para a borda arredondada ficar visível
+        bottom: false,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Primeira linha
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Row(
@@ -43,7 +42,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         ),
                         child: Stack(
                           children: [
-                            // Botão deslizante branco
                             AnimatedPositioned(
                               duration: const Duration(milliseconds: 2500),
                               curve: Curves.elasticOut,
@@ -58,7 +56,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                                 ),
                               ),
                             ),
-                            // Botões
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -90,7 +87,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 ],
               ),
             ),
-            // Segunda linha
             Column(
               children: [
                 Row(

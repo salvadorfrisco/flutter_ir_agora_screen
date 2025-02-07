@@ -36,24 +36,17 @@ class SuitePhotosPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         itemCount: photos.length,
         itemBuilder: (context, index) {
-          // Primeira linha: uma foto
           if (index == 0) {
             return _buildSingleImage(photos[index], imageHeight);
-          }
-          // Segunda linha: duas fotos
-          else if (index == 1 || index == 2) {
+          } else if (index == 1 || index == 2) {
             if (index == 1) {
               return _buildDoubleImage(
                   photos[index], photos[index + 1], imageHeight);
             }
             return const SizedBox();
-          }
-          // Terceira e quarta linhas: uma foto cada
-          else if (index == 3 || index == 4) {
+          } else if (index == 3 || index == 4) {
             return _buildSingleImage(photos[index], imageHeight);
-          }
-          // A partir da quinta foto: alterna entre duas fotos e uma foto
-          else {
+          } else {
             final adjustedIndex = index - 5;
             final isDoubleLine = (adjustedIndex ~/ 3) % 2 == 0;
 
