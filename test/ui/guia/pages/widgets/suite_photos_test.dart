@@ -2,12 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 
 import 'package:flutter_ir_agora_screen/ui/guia/widgets/suite_photo.dart';
 import 'package:flutter_ir_agora_screen/ui/guia/pages/suite_photos_page.dart';
 
-@GenerateMocks([])
 class TestHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {

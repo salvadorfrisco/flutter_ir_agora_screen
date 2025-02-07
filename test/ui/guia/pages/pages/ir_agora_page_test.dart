@@ -27,9 +27,6 @@ void main() {
   setUpAll(() {
     HttpOverrides.global = TestHttpOverrides();
     TestWidgetsFlutterBinding.ensureInitialized();
-  });
-
-  setUp(() {
     mockViewModel = MockMotelViewModel();
   });
 
@@ -44,8 +41,7 @@ void main() {
 
   Future<void> pumpTestWidget(WidgetTester tester) async {
     await tester.pumpWidget(createTestWidget());
-    await tester
-        .pump(const Duration(milliseconds: 100)); // Aguarda um tempo fixo
+    await tester.pump(const Duration(milliseconds: 100));
   }
 
   testWidgets('Exibe o indicador de carregamento quando estiver carregando',
@@ -87,7 +83,7 @@ void main() {
   });
 }
 
-// Função auxiliar para retornar dados mockados de motel
+// Dados mockados de motel
 Motel mockMotelData() {
   return Motel(
     logo: 'https://via.placeholder.com/150', // URL que funciona nos testes
