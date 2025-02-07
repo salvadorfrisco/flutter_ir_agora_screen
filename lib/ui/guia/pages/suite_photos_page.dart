@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/widgets/lowercase_text.dart';
+import '../widgets/lowercase_text.dart';
 
 class SuitePhotosPage extends StatelessWidget {
   final List<String> photos;

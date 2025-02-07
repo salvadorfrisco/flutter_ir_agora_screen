@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../view_model/motel_view_model.dart';
-import '../../core/widgets/lowercase_text.dart';
-import '../../core/widgets/rating_badge.dart';
+import 'lowercase_text.dart';
+import 'rating_badge.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});

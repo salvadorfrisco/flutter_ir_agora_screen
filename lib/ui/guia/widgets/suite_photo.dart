@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/widgets/lowercase_text.dart';
+import 'lowercase_text.dart';
 import '../pages/suite_photos_page.dart';
 
 class SuitePhoto extends StatelessWidget {

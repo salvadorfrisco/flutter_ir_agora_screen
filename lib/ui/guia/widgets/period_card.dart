@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../../domain/models/periodo.dart';
-import '../../core/widgets/lowercase_text.dart';
-import '../../core/widgets/discount_badge.dart';
+import '../../../domain/models/period.dart';
+import 'lowercase_text.dart';
+import 'discount_badge.dart';
 
 class PeriodCard extends StatelessWidget {
-  final Periodo periodo;
+  final Period periodo;
 
   const PeriodCard({super.key, required this.periodo});
 

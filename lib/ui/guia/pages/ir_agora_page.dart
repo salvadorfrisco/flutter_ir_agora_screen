@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../ui/guia/view_model/motel_view_model.dart';
-import '../../core/widgets/custom_app_bar.dart';
+import '../widgets/custom_app_bar.dart';
 import '../widgets/header_guia.dart';
 import '../widgets/suite_carousel.dart';
 

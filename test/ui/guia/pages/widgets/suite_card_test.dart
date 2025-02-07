@@ -7,8 +7,8 @@ import 'package:flutter_ir_agora_screen/ui/guia/widgets/suite_photo.dart';
 import 'package:flutter_ir_agora_screen/ui/guia/widgets/itens_category_card.dart';
 import 'package:flutter_ir_agora_screen/ui/guia/widgets/period_card.dart';
 import 'package:flutter_ir_agora_screen/domain/models/suite.dart';
-import 'package:flutter_ir_agora_screen/domain/models/periodo.dart';
-import 'package:flutter_ir_agora_screen/domain/models/categoria_item.dart';
+import 'package:flutter_ir_agora_screen/domain/models/period.dart';
+import 'package:flutter_ir_agora_screen/domain/models/category_item.dart';
 
 class TestHttpOverrides extends HttpOverrides {
   @override
@@ -36,18 +36,17 @@ void main() {
         qtd: 2,
         exibirQtdDisponiveis: true,
         categoriaItens: [
-          CategoriaItem(nome: 'TV', icone: 'https://example.com/tv.png'),
-          CategoriaItem(nome: 'Wi-Fi', icone: 'https://example.com/wifi.png'),
-          CategoriaItem(
-              nome: 'Cama King', icone: 'https://example.com/bed.png'),
+          CategoryItem(nome: 'TV', icone: 'https://example.com/tv.png'),
+          CategoryItem(nome: 'Wi-Fi', icone: 'https://example.com/wifi.png'),
+          CategoryItem(nome: 'Cama King', icone: 'https://example.com/bed.png'),
         ],
         periodos: [
-          Periodo(
+          Period(
             tempoFormatado: 'Manhã',
             valor: 150.0,
             valorTotal: 150.0,
           ),
-          Periodo(
+          Period(
             tempoFormatado: 'Noite',
             valor: 200.0,
             valorTotal: 200.0,

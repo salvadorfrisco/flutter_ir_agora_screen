@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ir_agora_screen/domain/models/discount.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_ir_agora_screen/ui/guia/widgets/period_card.dart';
-import 'package:flutter_ir_agora_screen/domain/models/periodo.dart';
-import 'package:flutter_ir_agora_screen/ui/core/widgets/discount_badge.dart';
+import 'package:flutter_ir_agora_screen/domain/models/period.dart';
+import 'package:flutter_ir_agora_screen/ui/guia/widgets/discount_badge.dart';
 
 void main() {
   Widget createTestWidget({
-    required Periodo periodo,
+    required Period periodo,
   }) {
     return MaterialApp(
       home: Scaffold(
@@ -18,7 +19,7 @@ void main() {
 
   testWidgets('PeriodCard exibe valores corretamente sem desconto',
       (WidgetTester tester) async {
-    final periodo = Periodo(
+    final periodo = Period(
       tempoFormatado: '2 noites',
       valor: 200.0,
       valorTotal: 200.0,
@@ -40,11 +41,11 @@ void main() {
 
   testWidgets('PeriodCard exibe valores corretamente com desconto',
       (WidgetTester tester) async {
-    final periodo = Periodo(
+    final periodo = Period(
       tempoFormatado: '3 noites',
       valor: 300.0,
       valorTotal: 250.0,
-      desconto: Desconto(desconto: 50.0),
+      desconto: Discount(desconto: 50.0),
     );
 
     await tester.pumpWidget(createTestWidget(periodo: periodo));
@@ -68,7 +69,7 @@ void main() {
 
   testWidgets('PeriodCard exibe o ícone de navegação',
       (WidgetTester tester) async {
-    final periodo = Periodo(
+    final periodo = Period(
       tempoFormatado: '1 noite',
       valor: 100.0,
       valorTotal: 100.0,

@@ -1,11 +1,11 @@
-import 'categoria_item.dart';
-import 'periodo.dart';
+import 'category_item.dart';
+import 'period.dart';
 
 class Suite {
   final String nome;
   final List<String> fotos;
-  final List<CategoriaItem> categoriaItens;
-  final List<Periodo> periodos;
+  final List<CategoryItem> categoriaItens;
+  final List<Period> periodos;
   final int? qtd;
   final bool exibirQtdDisponiveis;
 
@@ -23,10 +23,10 @@ class Suite {
       nome: json['nome'],
       fotos: List<String>.from(json['fotos']),
       categoriaItens: (json['categoriaItens'] as List)
-          .map((item) => CategoriaItem.fromJson(item))
+          .map((item) => CategoryItem.fromJson(item))
           .toList(),
       periodos: (json['periodos'] as List)
-          .map((periodo) => Periodo.fromJson(periodo))
+          .map((periodo) => Period.fromJson(periodo))
           .toList(),
       qtd: json['qtd'],
       exibirQtdDisponiveis: json['exibirQtdDisponiveis'] ?? false,

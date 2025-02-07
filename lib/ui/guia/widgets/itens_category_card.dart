@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../domain/models/categoria_item.dart';
-import '../../core/widgets/lowercase_text.dart';
+import '../../../domain/models/category_item.dart';
+import 'lowercase_text.dart';
 
 class ItensCategoryCard extends StatelessWidget {
-  final List<CategoriaItem> itens;
+  final List<CategoryItem> itens;
 
   const ItensCategoryCard({super.key, required this.itens});
 
@@ -31,7 +31,7 @@ class ItensCategoryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildItem(CategoriaItem item) {
+  Widget _buildItem(CategoryItem item) {
     return Container(
       padding: const EdgeInsets.all(2.0),
       decoration: BoxDecoration(
