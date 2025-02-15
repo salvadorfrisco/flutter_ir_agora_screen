@@ -15,6 +15,7 @@ dependencies:
   intl: ^0.18.0
   http: ^1.1.0
   dartz: ^0.10.1
+  flutter_native_splash: ^2.4.4
   
 dev_dependencies:
   flutter_test:
@@ -30,4 +31,6 @@ flutter:
   fonts:
     - family: Titillium
       fonts:
-        - asset: assets/Titillium-Regular.otf
+        - asset: assets/fonts/Titillium-Regular.otf
+  assets:
+    - assets/images/
