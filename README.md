@@ -9,6 +9,11 @@ Este é um aplicativo que exibe um guia de motéis e as suítes disponíveis par
 - **Lista de Motéis:** Mostra os motéis e as suítes disponíveis em uma lista organizada.  
 - **Visualização de Fotos:** Ao clicar em uma imagem, o usuário pode ver as fotos detalhadas da suíte.  
 
+## Vídeo de Apresentação
+
+Confira o vídeo de apresentação do aplicativo:  
+[🎥 Apresentação do App](./apresentacao.mov)
+
 ## Pré-requisitos
 
 Antes de executar o projeto, certifique-se de ter instalado:  
